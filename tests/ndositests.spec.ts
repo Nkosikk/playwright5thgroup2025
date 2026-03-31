@@ -22,6 +22,19 @@ test("login to mdosi website",async({page})=>{
   await page.waitForTimeout(3000)
     await page.getByRole('button', { name: 'Login' }).click()
   await page.waitForTimeout(5000)
+await page.getByRole('button').nth(4).click();
+await page.waitForTimeout(3000)
+await page.getByRole('textbox').fill('great experience');
+await page.waitForTimeout(3000)
+ 
+})
+
+
+test("Approve testimonial",async({page})=>{
+
+ await page.locator('button').filter({ hasText: '✓ Approve' }).first()
+ 
+})
 
   await page.locator('button').filter({ hasText: '+ Add Review' }).click();
     await page.waitForTimeout(3000)
