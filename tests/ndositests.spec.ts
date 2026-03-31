@@ -26,3 +26,9 @@ test("login to mdosi website",async({page})=>{
  
 })
 
+
+test("Approve testimonial",async({page})=>{
+
+ await page.locator('button').filter({ hasText: '✓ Approve' }).first()
+ 
+})
