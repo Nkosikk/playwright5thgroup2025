@@ -42,6 +42,6 @@ await page.waitForTimeout(3000)
 
 test("Approve testimonial",async({page})=>{
 
- await page.locator('button').filter({ hasText: '✓ Approve' }).first()
+ await page.locator('button').filter({ hasText: '✓ Approve' }).first().click();
  
 })
