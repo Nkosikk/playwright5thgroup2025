@@ -25,4 +25,11 @@ test("login to mdosi website",async({page})=>{
 
  
 })
+test("click write review and enter title",async({page})=>{
+
+    await page.locator('button').filter({ hasText: '+ Add Review' }).click();
+    await page.waitForTimeout(3000)
+    await page.getByRole('textbox', { name: 'E.g., Great Learning Experience!' }).fill('This is a review for the product')
+    await page.waitForTimeout(3000)
+})
 
