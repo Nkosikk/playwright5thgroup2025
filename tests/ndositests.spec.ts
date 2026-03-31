@@ -31,7 +31,7 @@ test("login to mdosi website",async({page})=>{
  
 })
 
-
+test("Add testimonial",async({page})=>{
 await page.getByRole('button').nth(4).click();
 await page.waitForTimeout(3000)
 await page.getByRole('textbox').fill('great experience');
