@@ -87,7 +87,7 @@ test("Find Testimonial element", async ({ page }) => {
       break;
     }
   }
-
+  
   if (testimonialCard === null)
     throw new Error(`No testimonial card found for "${testimonial.experience}" with Pending status and ${testimonial.rating} stars.`);
 });
