@@ -14,8 +14,9 @@ export const validUsers: Record<string, UserCredential> = {
     password: '@12345678'
   },
 
-    instructorUser: {
+  instructorUser: {
     email: 'instructor@gmail.com',
     password: '@12345678'
   }
 };
+
