@@ -6,5 +6,6 @@ test.describe('Login to Ndosi Website', () => {
         await loginPage.goto();
         await loginPage.clickLoginButton();
         await loginPage.emailInput.fill(validUsers.admin.email);
+
     })
 })
