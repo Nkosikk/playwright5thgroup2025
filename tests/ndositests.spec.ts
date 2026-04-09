@@ -22,7 +22,8 @@ test("login to mdosi website",async({page})=>{
   await page.waitForTimeout(3000)
     await page.getByRole('button', { name: 'Login' }).nth(1).click()
   await page.waitForTimeout(5000)
-
+   await page.getByRole('button', { name: 'Login review' }).click()
+    await page.waitForTimeout(2000)
  
 })
 
