@@ -20,7 +20,7 @@ test("login to mdosi website",async({page})=>{
   await page.getByRole('textbox', { name: 'Email' }).fill('admin@gmail.com')
   await page.getByRole('textbox', { name: 'Password' }).fill('@12345678')
   await page.waitForTimeout(3000)
-    await page.getByRole('button', { name: 'Login' }).nth(1).click()
+    await page.getByRole('button', { name: 'Login' }).click()
   await page.waitForTimeout(5000)
 
  
