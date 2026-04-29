@@ -16,7 +16,6 @@ test.describe('Verify login success', () => {
         await loginPage.goto();
         await loginPage.clickLoginButton();
         await loginPage.login(validUsers.admin.email, validUsers.admin.password);
-        await homePage.verifyHomePage.waitFor({ state: 'visible' });
-        
+        await homePage.verifyHomePageIsVisible();
     })
 })

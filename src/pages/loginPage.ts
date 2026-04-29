@@ -10,6 +10,7 @@ export class LoginPage extends BasePage {
     }
     get loginButton(): Locator {
         return this.page.getByRole('button',{ name: 'Login' });
+        // await page.locator('#login-submit')
     }
 
     get emailInput(): Locator {
