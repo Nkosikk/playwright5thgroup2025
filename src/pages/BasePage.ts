@@ -1,13 +1,6 @@
-/**
- * BasePage.ts
- * This class serves as a base for all page objects in the application. It provides common methods for navigation and interaction with web elements.
- * Each specific page will extend this BasePage to inherit its functionality, allowing for code reuse and better organization of page-specific actions.
- */
-
-import {Page,Locator, expect} from '@playwright/test';
+﻿import { Page, Locator, expect } from '@playwright/test';
 
 export class BasePage {
-
     protected readonly page: Page;
 
     constructor(page: Page) {
@@ -19,13 +12,19 @@ export class BasePage {
         await this.page.goto(url);
     }
 
-    async clickElement(locator: Locator) {
+    async clickElement(locator: Locator, options?: { force?: boolean }) {
         console.log(`Clicking on element: ${locator}`);
+        if (options?.force) {
+            await locator.click({ force: true });
+            return;
+        }
+        await locator.scrollIntoViewIfNeeded();
         await locator.click();
     }
 
     async enterText(locator: Locator, text: string) {
         console.log(`Entering text: "${text}" into element: ${locator}`);
+        await locator.scrollIntoViewIfNeeded();
         await locator.fill(text);
     }
 
@@ -33,5 +32,4 @@ export class BasePage {
         console.log(`Verifying element is visible: ${locator}`);
         await expect(locator).toBeVisible();
     }
-
 }
